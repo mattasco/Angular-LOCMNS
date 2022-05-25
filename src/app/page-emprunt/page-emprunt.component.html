@@ -1,0 +1,17 @@
+<header></header>
+
+
+<form [formGroup]="formControl" (submit)="onValid()">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date" formControlName="dateDebutPret">
+          <input matEndDate placeholder="End date" formControlName="dateFinPret">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <br><br><br>
+<input type="text" formControlName="utilisation">
+</form>

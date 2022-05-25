@@ -1,0 +1,22 @@
+<img class="locmns" src="assets\images\LOC MNS (1).png" height="250">
+
+<form [formGroup]="formControl" class="d-flex flex-column" (submit)="onConnexion()">
+    <mat-form-field appearance="fill">
+        <mat-label>Login</mat-label>
+        <input formControlName="login" matInput>
+        <mat-error *ngIf="formControl.get('login')?.hasError('required')">
+            Le login est <strong>obligatoire</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input type="password" formControlName="password" matInput>
+        <mat-error *ngIf="formControl.get('password')?.hasError('required')">
+            Le mot de passe est <strong>obligatoire</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Se connecter</button>
+</form>

@@ -1,0 +1,57 @@
+<header></header>
+
+<p>Choississez le matériel à emprunter</p>
+<div class="container">
+    <div style="display:flex; flex-direction: row; justify-content: center; margin: 25px;">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Vidéo projecteurs</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="assets\images\business-g8bcd1db9d_1920.jpg"
+                alt="Image d'un vidéoprojecteur">
+                <mat-card-actions>
+                    <button (click)="onChoice(1)" mat-fab color="primary"><mat-icon>start</mat-icon></button>
+                </mat-card-actions>
+        </mat-card>
+        
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ordinateurs</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="assets\images\laptop-g9197cb83f_1280.png"
+                alt="Image d'un ordinateur">
+                <mat-card-actions>
+                    <button (click)="onChoice(2)" mat-fab color="primary"><mat-icon>start</mat-icon></button>
+                </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div style="display:flex; flex-direction: row; justify-content: center; margin: 25px;">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Casques VR</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="assets\images\virtual-g56f527edb_1280.png"
+                alt="Image d'un casque de réalité virtuelle">
+                <mat-card-actions>
+                    <button (click)="onChoice(3)" mat-fab color="primary"><mat-icon>start</mat-icon></button>
+                </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Webcams</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="assets\images\web-camera-g242e27123_1280.png"
+                alt="Image d'une webcam">
+                <mat-card-actions>
+                    <button (click)="onChoice(4)" mat-fab color="primary"><mat-icon>start</mat-icon></button>
+                </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+<br><br><br>
