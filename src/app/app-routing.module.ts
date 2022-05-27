@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageAccueilComponent } from './page-accueil/page-accueil.component';
+import { PageConfirmationComponent } from './page-confirmation/page-confirmation.component';
 import { PageConnexionComponent } from './page-connexion/page-connexion.component';
 import { PageEmpruntComponent } from './page-emprunt/page-emprunt.component';
 import { PageModeleComponent } from './page-modele/page-modele.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   {path:"connexion",component:PageConnexionComponent},
   {path:"accueil",component:PageAccueilComponent,canActivate:[UserGuard]},
   {path:"modele/:id",component:PageModeleComponent,canActivate:[UserGuard]},
-  {path:"emprunt/:id",component:PageEmpruntComponent,canActivate:[UserGuard]}
+  {path:"emprunt/:id",component:PageEmpruntComponent,canActivate:[UserGuard]},
+  {path:"confirmation",component:PageConfirmationComponent,canActivate:[UserGuard]}
 ];
 
 @NgModule({

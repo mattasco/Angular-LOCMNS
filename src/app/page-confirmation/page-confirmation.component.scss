@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+
+.logo {
+    margin-top: 2%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button{
+    background-color: #FF6220 ;
+    border-radius: 5px;
+    border-color: white;
+    color: white;
+    width: 150px;
+    height: 40px;
+}

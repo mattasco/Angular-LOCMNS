@@ -19,6 +19,7 @@ import { TokenInterceptor } from './token.interceptor';
 import { PageEmpruntComponent } from './page-emprunt/page-emprunt.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
+import { PageConfirmationComponent } from './page-confirmation/page-confirmation.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
     PageConnexionComponent,
     HeaderComponent,
     PageModeleComponent,
-    PageEmpruntComponent
+    PageEmpruntComponent,
+    PageConfirmationComponent
   ],
   imports: [
     BrowserModule,

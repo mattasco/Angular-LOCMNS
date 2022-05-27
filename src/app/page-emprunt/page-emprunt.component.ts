@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -11,8 +12,9 @@ import { TokenIdentificationService } from '../token-identification.service';
   styleUrls: ['./page-emprunt.component.scss']
 })
 export class PageEmpruntComponent implements OnInit {
+  
   private idModele: number = 0;
-
+  public materiel:any;
 
   public formControl: FormGroup = this.formbuilder.group(
     {
@@ -23,11 +25,16 @@ export class PageEmpruntComponent implements OnInit {
   )
 
   constructor(private router: ActivatedRoute, private client: HttpClient, private formbuilder: FormBuilder, private route: Router, private tokenIdentification: TokenIdentificationService) { }
+    
+
 
   ngOnInit(): void {
     this.router.params.subscribe(
       (parametres: any) => {
         this.idModele = parametres.id
+        this.client.get("http://"+environment.adresseServeur+"/materiel/"+this.idModele)
+        .subscribe(reponse => this.materiel=reponse)
+        console.log(this.materiel)
       }
     )
   }
@@ -38,9 +45,10 @@ export class PageEmpruntComponent implements OnInit {
       const emprunt = this.formControl.value
       this.client.post("http://localhost:8080/emprunt/" + modeleId, emprunt).subscribe(emprunt => {
         if (emprunt) {
-          this.route.navigateByUrl("/accueil")
+          this.route.navigateByUrl("/confirmation")
         } else {
-          alert("problemo")
+          alert("Un problème est survenu")
+          this.route.navigateByUrl("/accueil")
         }
       })
     }
