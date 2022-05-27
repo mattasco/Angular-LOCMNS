@@ -2,16 +2,28 @@
 
 
 <form [formGroup]="formControl" (submit)="onValid()">
-    <mat-form-field appearance="fill">
-        <mat-label>Enter a date range</mat-label>
+    <mat-form-field appearance="fill" style="width:35%; margin-top:50px;">
+        <mat-label>Dates souhaitées</mat-label>
         <mat-date-range-input [rangePicker]="picker">
           <input matStartDate placeholder="Start date" formControlName="dateDebutPret">
           <input matEndDate placeholder="End date" formControlName="dateFinPret">
         </mat-date-range-input>
-        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
       <br><br><br>
-<input type="text" formControlName="utilisation">
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 18px;">Décrivez le cadre d'utilisation : </label><br><br>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="utilisation"></textarea>
+      </div>
+      <div id="container">
+        <button class="learn-more" type="submit" style="margin-top:50px;">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Valider</span>
+        </button>
+      </div>
+
 </form>

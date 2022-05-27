@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-page-modele',
@@ -16,14 +17,13 @@ export class PageModeleComponent implements OnInit {
     this.router.params.subscribe(
       (parametres :any) => {
         this.id=parametres.id
-        this.client.get("http://localhost:8050/liste-modele/"+this.id)
+        this.client.get("http://"+environment.adresseServeur+"/liste-modele/"+this.id)
         .subscribe(reponse => this.listeModeles = reponse)
       }
     )
   }
-
+  
   onChoice(id :number){
     this.route.navigateByUrl("/emprunt/"+id)
   }
-
 }

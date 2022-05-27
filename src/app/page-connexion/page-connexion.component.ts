@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TokenIdentificationService } from '../token-identification.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-page-connexion',
@@ -29,7 +30,7 @@ export class PageConnexionComponent implements OnInit {
       const utilisateur = this.formControl.value
 
       this.client
-        .post("http://localhost:8050/connexion", utilisateur)
+        .post("http://"+environment.adresseServeur+"/connexion", utilisateur)
         .subscribe((resultat: any) => {
           if (resultat.erreur) {
             alert(resultat.erreur);
