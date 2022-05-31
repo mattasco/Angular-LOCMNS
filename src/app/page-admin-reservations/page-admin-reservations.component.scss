@@ -56,7 +56,7 @@ h1{
 }
 
 .container tr:hover {
-    background-color: #464A52;
+    background-color: #2E3B6E;
     -webkit-box-shadow: 0 6px 6px -6px #2E3B6E;
     -moz-box-shadow: 0 6px 6px -6px #2E3B6E;
     box-shadow: 0 6px 6px -6px #2E3B6E;
@@ -64,10 +64,10 @@ h1{
 
 .container td:hover {
     background-color: #FF6220;
-    color: #403E10;
+    color: #2E3B6E;
     font-weight: bold;
 
-    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    box-shadow: #2E3B6E -1px 1px, #2E3B6E -2px 2px, #2E3B6E -3px 3px, #2E3B6E -4px 4px, #2E3B6E -5px 5px, #2E3B6E -6px 6px;
     transform: translate3d(6px, -6px, 0);
 
     transition-delay: 0s;

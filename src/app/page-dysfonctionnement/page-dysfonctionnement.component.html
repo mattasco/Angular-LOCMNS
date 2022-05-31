@@ -1,0 +1,27 @@
+<header></header>
+
+
+<div class="materiel">
+    <p>{{emprunt.materiel.modele.nom}}</p><br>
+    <p>Numéro de série : {{emprunt.materiel.numSerie}}</p>
+</div>
+
+<form style="margin-top: 3%;" class="container" [formGroup]="formControl">
+    <div class="mb-3" style="margin-top:2%;">
+        <label class="form-label" style="font-size: 18px; ">Décrivez le dysfonctionnement : </label><br><br>
+        <textarea class="form-control" rows="10" formControlName="dysfonctionnement"></textarea><br>
+        <mat-error *ngIf="formControl.get('dysfonctionnement')?.hasError('required')">
+            Description <strong>obligatoire</strong>
+        </mat-error>
+    </div>
+
+    <div id="valider">
+        <button class="learn-more" type="submit" style="margin-top:50px;" (click)="signaler()">
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Valider</span>
+        </button>
+    </div>
+
+</form>

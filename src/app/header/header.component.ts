@@ -34,4 +34,8 @@ export class HeaderComponent implements OnInit {
     adminReservations(){
       this.router.navigateByUrl("admin-reservations")
     }
+
+    mesReserv(){
+      this.router.navigateByUrl("mes-reservations")
+    }
 }

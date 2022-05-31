@@ -24,6 +24,7 @@ import {MatTableModule} from '@angular/material/table';
 import { PageAdminReservationsComponent } from './page-admin-reservations/page-admin-reservations.component';
 import { DatePipe } from '@angular/common';
 import { PageMesReservationsComponent } from './page-mes-reservations/page-mes-reservations.component';
+import { PageDysfonctionnementComponent } from './page-dysfonctionnement/page-dysfonctionnement.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { PageMesReservationsComponent } from './page-mes-reservations/page-mes-r
     PageConfirmationComponent,
     PageAdminReservationsComponent,
     PageMesReservationsComponent,
+    PageMesReservationsComponent,
+    PageDysfonctionnementComponent
   ],
   imports: [
     BrowserModule,

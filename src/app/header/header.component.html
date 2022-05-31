@@ -1,6 +1,6 @@
 <div id="menu">
     <button mat-button routerLink="/accueil">Accueil</button>
-    <button mat-button>Mes réservations</button>
+    <button mat-button (click)="mesReserv()">Mes réservations</button>
     <button mat-button (click)="onDeconnexion()">Déconnexion</button>
     <button mat-button [matMenuTriggerFor]="menu" *ngIf="admin">Admin <mat-icon>expand_more</mat-icon></button>
     <mat-menu #menu="matMenu">

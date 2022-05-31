@@ -1,1 +1,23 @@
-<p>page-mes-reservations works!</p>
+<header></header>
+
+<h1>Mes réservations</h1>
+
+<table class="container">
+    <thead>
+        <tr>
+            <th style="width:5%">#</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Matériel concerné</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emprunt of listeReservations">
+            <td>{{emprunt.id}}</td>
+            <td>{{emprunt.dateDebutPret}}</td>
+            <td>{{emprunt.dateFinPret}}</td>
+            <td>{{emprunt.materiel.modele.nom}}</td>
+            <td style="width:20% ;"><button (click)="dysfonctionnement(emprunt.id)" >Signaler un dysfonctionnement</button></td>
+        </tr>
+    </tbody>
+</table>
