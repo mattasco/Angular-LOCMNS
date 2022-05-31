@@ -23,4 +23,9 @@ export class TokenIdentificationService {
       this.utilisateur.next(null)
     }
   }
+
+  public deconnexion(){
+    localStorage.removeItem('token')
+    this.utilisateur.next(null)
+  }
 }

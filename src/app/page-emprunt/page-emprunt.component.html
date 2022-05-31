@@ -12,7 +12,9 @@
           <input matStartDate placeholder="Start date" formControlName="dateDebutPret">
           <input matEndDate placeholder="End date" formControlName="dateFinPret">
         </mat-date-range-input>
-        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-error *ngIf="formControl.get('dateDebutPret')?.hasError('required') || formControl.get('dateFinPret')?.hasError('required')">
+          Les dates sont <strong>obligatoires</strong>
+      </mat-error>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
@@ -20,7 +22,11 @@
       <div class="mb-3" style="margin-top:2%;">
         <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 18px; ">Décrivez le cadre d'utilisation : </label><br><br>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="utilisation"></textarea>
+        
       </div>
+      <mat-error *ngIf="formControl.get('utilisation')?.hasError('required')">
+        Description <strong>obligatoire</strong>
+    </mat-error>
       <div id="container">
         <button class="learn-more" type="submit" style="margin-top:50px;">
           <span class="circle" aria-hidden="true">

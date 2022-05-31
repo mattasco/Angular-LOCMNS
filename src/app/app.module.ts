@@ -20,7 +20,10 @@ import { PageEmpruntComponent } from './page-emprunt/page-emprunt.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
 import { PageConfirmationComponent } from './page-confirmation/page-confirmation.component';
-
+import {MatTableModule} from '@angular/material/table';
+import { PageAdminReservationsComponent } from './page-admin-reservations/page-admin-reservations.component';
+import { DatePipe } from '@angular/common';
+import { PageMesReservationsComponent } from './page-mes-reservations/page-mes-reservations.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { PageConfirmationComponent } from './page-confirmation/page-confirmation
     HeaderComponent,
     PageModeleComponent,
     PageEmpruntComponent,
-    PageConfirmationComponent
+    PageConfirmationComponent,
+    PageAdminReservationsComponent,
+    PageMesReservationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +51,10 @@ import { PageConfirmationComponent } from './page-confirmation/page-confirmation
     MatIconModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule
   ],
-  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
+  providers: [DatePipe,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

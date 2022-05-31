@@ -5,6 +5,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { TokenIdentificationService } from '../token-identification.service';
+import {formatDate} from '@angular/common';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-page-emprunt',
@@ -24,8 +26,9 @@ export class PageEmpruntComponent implements OnInit {
     }
   )
 
-  constructor(private router: ActivatedRoute, private client: HttpClient, private formbuilder: FormBuilder, private route: Router, private tokenIdentification: TokenIdentificationService) { }
-    
+  constructor(private router: ActivatedRoute,private dateAdapter:DateAdapter<Date>, private client: HttpClient, private formbuilder: FormBuilder, private route: Router, private tokenIdentification: TokenIdentificationService,private datepipe:DatePipe) {
+    this.dateAdapter.setLocale('fr')
+  }
 
 
   ngOnInit(): void {
@@ -43,7 +46,7 @@ export class PageEmpruntComponent implements OnInit {
     if (this.formControl.valid) {
       const modeleId = this.idModele
       const emprunt = this.formControl.value
-      this.client.post("http://localhost:8080/emprunt/" + modeleId, emprunt).subscribe(emprunt => {
+      this.client.post("http://localhost:8080/emprunt/"+modeleId, emprunt).subscribe(emprunt => {
         if (emprunt) {
           this.route.navigateByUrl("/confirmation")
         } else {
