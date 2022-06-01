@@ -1,0 +1,28 @@
+<header></header>
+
+<h1>Utilisateurs</h1>
+
+<div class="boutton">
+<a><button class="bn632-hover bn26" (click)="ajouterUtilisateur()">Ajouter un utilisateur</button></a>
+</div>
+
+<table class="container">
+    <thead>
+        <tr>
+            <th style="width:5%">#</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Téléphone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let utilisateur of listeUtilisateurs">
+            <td>{{utilisateur.id}}</td>
+            <td>{{utilisateur.nom}}</td>
+            <td>{{utilisateur.prenom}}</td>
+            <td>{{utilisateur.telephone}}</td>
+            <td style="width:20% ;"><button (click)="supprimerUtilisateur(utilisateur.id)" >Supprimer l'utilisateur</button></td>
+            <!-- <td style="width:20% ;"><button (click)="modifierUtilisateur(utilisateur.id)" >Signaler un dysfonctionnement</button></td> -->
+        </tr>
+    </tbody>
+</table>

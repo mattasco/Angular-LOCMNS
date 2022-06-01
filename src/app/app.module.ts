@@ -18,13 +18,17 @@ import {MatIconModule} from '@angular/material/icon';
 import { TokenInterceptor } from './token.interceptor';
 import { PageEmpruntComponent } from './page-emprunt/page-emprunt.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
+import { DateAdapter, MatNativeDateModule, MatOption, MatPseudoCheckboxModule } from '@angular/material/core';
 import { PageConfirmationComponent } from './page-confirmation/page-confirmation.component';
 import {MatTableModule} from '@angular/material/table';
 import { PageAdminReservationsComponent } from './page-admin-reservations/page-admin-reservations.component';
 import { DatePipe } from '@angular/common';
 import { PageMesReservationsComponent } from './page-mes-reservations/page-mes-reservations.component';
 import { PageDysfonctionnementComponent } from './page-dysfonctionnement/page-dysfonctionnement.component';
+import { PageUtilisateursComponent } from './page-utilisateurs/page-utilisateurs.component';
+import { PageAjouterUtilisateurComponent } from './page-ajouter-utilisateur/page-ajouter-utilisateur.component';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { PageDysfonctionnementComponent } from './page-dysfonctionnement/page-dy
     PageAdminReservationsComponent,
     PageMesReservationsComponent,
     PageMesReservationsComponent,
-    PageDysfonctionnementComponent
+    PageDysfonctionnementComponent,
+    PageUtilisateursComponent,
+    PageAjouterUtilisateurComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,10 @@ import { PageDysfonctionnementComponent } from './page-dysfonctionnement/page-dy
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [DatePipe,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]

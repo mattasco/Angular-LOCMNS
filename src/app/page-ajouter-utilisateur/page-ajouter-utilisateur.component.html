@@ -1,0 +1,87 @@
+<header></header>
+
+
+<form [formGroup]="formControl" style="margin-top: 3%;" (submit)="onValid()">
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Login</mat-label>
+            <input matInput placeholder="Login" formControlName="login">
+            <mat-hint>Entrez le login</mat-hint>
+            <mat-error *ngIf="formControl.get('login')?.hasError('required')">
+                Login <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Nom" formControlName="nom">
+            <mat-hint>Entrez le nom</mat-hint>
+            <mat-error *ngIf="formControl.get('login')?.hasError('required')">
+                Nom <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Prenom</mat-label>
+            <input matInput placeholder="Prenom" formControlName="prenom">
+            <mat-hint>Entrez le prenom</mat-hint>
+            <mat-error *ngIf="formControl.get('prenom')?.hasError('required')">
+                Prenom <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="E-mail" formControlName="email" type="email">
+            <mat-hint>Entrez l'e-mail</mat-hint>
+            <mat-error *ngIf="formControl.get('email')?.hasError('required')">
+                Email <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Téléphone</mat-label>
+            <input matInput placeholder="Téléphone" formControlName="telephone" type="tel">
+            <mat-hint>Entrez le numéro de téléphone</mat-hint>
+            <mat-error *ngIf="formControl.get('telephone')?.hasError('required')">
+                Telephone <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Adresse</mat-label>
+            <input matInput placeholder="Adresse" formControlName="adresse">
+            <mat-hint>Entrez l'adresse'</mat-hint>
+            <mat-error *ngIf="formControl.get('adresse')?.hasError('required')">
+                Adresse <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Mot de passe</mat-label>
+            <input matInput placeholder="Adresse" formControlName="password" type="password">
+            <mat-hint>Entrez l'adresse'</mat-hint>
+            <mat-error *ngIf="formControl.get('password')?.hasError('required')">
+                Mot de passe <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <mat-checkbox class="example-margin" (change)="OnChange($event)">Administrateur</mat-checkbox>
+
+    <div class="boutton">
+        <a><button class="bn632-hover bn26" type="submit">Ajouter un utilisateur</button></a>
+    </div>
+</form>

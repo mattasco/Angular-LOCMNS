@@ -5,8 +5,8 @@
     <button mat-button [matMenuTriggerFor]="menu" *ngIf="admin">Admin <mat-icon>expand_more</mat-icon></button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="adminReservations()">Réservations</button>
+        <button mat-menu-item (click)="adminUtilisateurs()">Gestion des utilisateurs</button>
         <button mat-menu-item>Gestion des marques</button>
-        <button mat-menu-item>Gestion des utilisateurs</button>
         <button mat-menu-item>Gestion des modèles</button>
         <button mat-menu-item>Gestion des matériels</button>
     </mat-menu>

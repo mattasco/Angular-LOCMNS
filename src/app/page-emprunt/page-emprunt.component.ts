@@ -26,7 +26,7 @@ export class PageEmpruntComponent implements OnInit {
     }
   )
 
-  constructor(private router: ActivatedRoute,private dateAdapter:DateAdapter<Date>, private client: HttpClient, private formbuilder: FormBuilder, private route: Router, private tokenIdentification: TokenIdentificationService,private datepipe:DatePipe) {
+  constructor(private router: ActivatedRoute,private dateAdapter:DateAdapter<Date>, private client: HttpClient, private formbuilder: FormBuilder, private route: Router) {
     this.dateAdapter.setLocale('fr')
   }
 
@@ -47,7 +47,7 @@ export class PageEmpruntComponent implements OnInit {
       const modeleId = this.idModele
       const emprunt = this.formControl.value
       this.client.post("http://localhost:8080/emprunt/"+modeleId, emprunt).subscribe(emprunt => {
-        if (emprunt) {
+        if(emprunt) {
           this.route.navigateByUrl("/confirmation")
         } else {
           alert("Un problème est survenu")
