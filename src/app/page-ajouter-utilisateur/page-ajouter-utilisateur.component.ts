@@ -17,10 +17,10 @@ export class PageAjouterUtilisateurComponent implements OnInit {
       "login": ["", [Validators.required]],
       "nom": ["", [Validators.required]],
       "prenom": ["", [Validators.required]],
-      "telephone": ["", [Validators.required]],
-      "email": ["", [Validators.required]],
+      "telephone": ["", [Validators.required,Validators.pattern('[- +()0-9]+')]],
+      "email": ["", [Validators.required,Validators.email]],
       "password": ["", [Validators.required]],
-      "adresse": [false, [Validators.required]]
+      "adresse": ["", [Validators.required]]
     }
   )
 
@@ -31,7 +31,6 @@ export class PageAjouterUtilisateurComponent implements OnInit {
 
   OnChange($event:any){
     this.isChecked=$event.checked
-    console.log(this.isChecked.valueOf()) 
 }
 
 
@@ -39,8 +38,7 @@ export class PageAjouterUtilisateurComponent implements OnInit {
     if (this.formControl.valid) {
       const utilisateur = this.formControl.value
       utilisateur.admin=this.isChecked
-      console.log(utilisateur)
-      this.client.post("http://localhost:8080/utilisateur", utilisateur).subscribe(utilisateur => {
+      this.client.post("http://localhost:8080/admin/utilisateur", utilisateur).subscribe(utilisateur => {
         if (utilisateur) {
           this.route.navigateByUrl("/admin-utilisateurs")
         } else {

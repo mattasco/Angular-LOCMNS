@@ -29,6 +29,7 @@ import { PageUtilisateursComponent } from './page-utilisateurs/page-utilisateurs
 import { PageAjouterUtilisateurComponent } from './page-ajouter-utilisateur/page-ajouter-utilisateur.component';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PageModifierUtilisateurComponent } from './page-modifier-utilisateur/page-modifier-utilisateur.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     PageMesReservationsComponent,
     PageDysfonctionnementComponent,
     PageUtilisateursComponent,
-    PageAjouterUtilisateurComponent
+    PageAjouterUtilisateurComponent,
+    PageModifierUtilisateurComponent
   ],
   imports: [
     BrowserModule,

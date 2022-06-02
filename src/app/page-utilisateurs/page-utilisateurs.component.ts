@@ -10,26 +10,44 @@ import { environment } from 'src/environments/environment';
 })
 export class PageUtilisateursComponent implements OnInit {
   public listeUtilisateurs: any;
+  public value: string = '';
 
-  constructor(private client: HttpClient,private route:Router) { }
+  constructor(private client: HttpClient, private route: Router) { }
 
   ngOnInit(): void {
     this.rafraichirListeUtilisateurs()
   }
 
   rafraichirListeUtilisateurs() {
-    this.client.get("http://" + environment.adresseServeur + "/liste-utilisateur")
+    this.client.get("http://" + environment.adresseServeur + "/admin/liste-utilisateur")
       .subscribe(reponse => this.listeUtilisateurs = reponse)
   }
 
-  supprimerUtilisateur(id:number){
-    this.client.delete("http://" + environment.adresseServeur + "/utilisateur/"+id)
-    .subscribe(reponse => this.rafraichirListeUtilisateurs())
+  supprimerUtilisateur(id: number) {
+    this.client.delete("http://" + environment.adresseServeur + "/admin/utilisateur/" + id)
+      .subscribe(reponse => this.rafraichirListeUtilisateurs())
   }
 
   //modifierUtilisateur
 
-  ajouterUtilisateur(){
+  ajouterUtilisateur() {
     this.route.navigateByUrl("ajouter-utilisateur")
+  }
+
+  modifierUtilisateur(id: number) {
+    this.route.navigateByUrl("modifier-utilisateur/" + id)
+  }
+
+  onKey() {
+    this.rafraichirRecherche(this.value)
+  }
+
+  rafraichirRecherche(value: string) {
+    if (value != null && value != '') {
+      this.client.get("http://" + environment.adresseServeur + "/admin/recherche/" + value)
+        .subscribe(reponse => this.listeUtilisateurs = reponse)
+    } else {
+      this.rafraichirListeUtilisateurs()
+    }
   }
 }

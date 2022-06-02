@@ -1,4 +1,4 @@
-<div id="menu">
+<div class="menu">
     <button mat-button routerLink="/accueil">Accueil</button>
     <button mat-button (click)="mesReserv()">Mes réservations</button>
     <button mat-button (click)="onDeconnexion()">Déconnexion</button>
@@ -6,8 +6,6 @@
     <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="adminReservations()">Réservations</button>
         <button mat-menu-item (click)="adminUtilisateurs()">Gestion des utilisateurs</button>
-        <button mat-menu-item>Gestion des marques</button>
-        <button mat-menu-item>Gestion des modèles</button>
-        <button mat-menu-item>Gestion des matériels</button>
+        <button mat-menu-item>Gestion du parc</button>
     </mat-menu>
 </div>

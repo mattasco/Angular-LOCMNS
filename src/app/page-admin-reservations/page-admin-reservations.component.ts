@@ -22,27 +22,27 @@ export class PageAdminReservationsComponent implements OnInit {
   }
 
   valideEmprunt(id:number){
-    this.client.post("http://"+environment.adresseServeur+"/valideemprunt",id)
+    this.client.post("http://"+environment.adresseServeur+"/admin/valideemprunt",id)
     .subscribe(reponse => this.rafraichir())
   }
 
   rafraichirListeEmpruntNonValide(){
-    this.client.get("http://"+environment.adresseServeur+"/empruntnonvalide")
+    this.client.get("http://"+environment.adresseServeur+"/admin/empruntnonvalide")
     .subscribe(reponse => this.listeEmprunt = reponse)
   }
 
   supprimeEmprunt(id:number){
-    this.client.delete("http://"+environment.adresseServeur+"/supprimeEmprunt/"+id)
+    this.client.delete("http://"+environment.adresseServeur+"/admin/supprimeEmprunt/"+id)
     .subscribe(reponse => this.rafraichir())
   }
 
   rafraichirListeEmpruntEnCours(){
-    this.client.get("http://"+environment.adresseServeur+"/empruntencours")
+    this.client.get("http://"+environment.adresseServeur+"/admin/empruntencours")
     .subscribe(reponse => this.listeEmpruntValide = reponse)
   }
 
   retourEmprunt(id:number){
-    this.client.post("http://"+environment.adresseServeur+"/retouremprunt",id)
+    this.client.post("http://"+environment.adresseServeur+"/admin/retouremprunt",id)
     .subscribe(reponse => this.rafraichir())
   }
 

@@ -3,16 +3,26 @@
 <h1>Utilisateurs</h1>
 
 <div class="boutton">
-<a><button class="bn632-hover bn26" (click)="ajouterUtilisateur()">Ajouter un utilisateur</button></a>
+    <a><button class="bn632-hover bn26" (click)="ajouterUtilisateur()">Ajouter un utilisateur</button></a>
+</div>
+
+<div class="recherche">
+<mat-form-field class="rechercheUser" appearance="fill">
+    <mat-label>Recherche par nom ou prénom</mat-label>
+    <input matInput type="text" [(ngModel)]="value" (keyup)="onKey()">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
 </div>
 
 <table class="container">
     <thead>
         <tr>
             <th style="width:5%">#</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Téléphone</th>
+            <th style="width:15%;">Nom</th>
+            <th style="width:15%;">Prénom</th>
+            <th style="width:15%;">Téléphone</th>
         </tr>
     </thead>
     <tbody>
@@ -21,8 +31,9 @@
             <td>{{utilisateur.nom}}</td>
             <td>{{utilisateur.prenom}}</td>
             <td>{{utilisateur.telephone}}</td>
-            <td style="width:20% ;"><button (click)="supprimerUtilisateur(utilisateur.id)" >Supprimer l'utilisateur</button></td>
-            <!-- <td style="width:20% ;"><button (click)="modifierUtilisateur(utilisateur.id)" >Signaler un dysfonctionnement</button></td> -->
+            <td style="width:10% ;"><button (click)="supprimerUtilisateur(utilisateur.id)" class="bn632-hover bn26"
+                    style="width:200px ;">Supprimer</button><button (click)="modifierUtilisateur(utilisateur.id)"
+                    class="bn632-hover bn26" style="width:200px ;">Modifier</button></td>
         </tr>
     </tbody>
 </table>

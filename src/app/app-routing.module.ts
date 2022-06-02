@@ -10,6 +10,7 @@ import { PageDysfonctionnementComponent } from './page-dysfonctionnement/page-dy
 import { PageEmpruntComponent } from './page-emprunt/page-emprunt.component';
 import { PageMesReservationsComponent } from './page-mes-reservations/page-mes-reservations.component';
 import { PageModeleComponent } from './page-modele/page-modele.component';
+import { PageModifierUtilisateurComponent } from './page-modifier-utilisateur/page-modifier-utilisateur.component';
 import { PageUtilisateursComponent } from './page-utilisateurs/page-utilisateurs.component';
 import { UserGuard } from './user.guard';
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:"mes-reservations",component:PageMesReservationsComponent,canActivate:[UserGuard]},
   {path:"dysfonctionnement/:id",component:PageDysfonctionnementComponent,canActivate:[UserGuard]},
   {path:"admin-utilisateurs",component:PageUtilisateursComponent,canActivate:[AdminGuard]},
-  {path:"ajouter-utilisateur",component:PageAjouterUtilisateurComponent,canActivate:[AdminGuard]}
+  {path:"ajouter-utilisateur",component:PageAjouterUtilisateurComponent,canActivate:[AdminGuard]},
+  {path:"modifier-utilisateur/:id",component:PageModifierUtilisateurComponent,canActivate:[AdminGuard]}
 ];
 
 @NgModule({

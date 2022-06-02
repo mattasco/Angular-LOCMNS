@@ -1,8 +1,12 @@
-#menu {
+.menu {
+    position: fixed;
     background-color: #2E3B6E;
+    width: 100%;
+    z-index: 100;
+    top:0px;
 }
 
-#menu button{
+.menu button{
     background-color: #2E3B6E;
     color: white;
     padding: 8px;
