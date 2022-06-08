@@ -1,0 +1,20 @@
+<header></header>
+
+
+<form [formGroup]="formControl" style="margin-top: 3%;" (submit)="onValid()">
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Nom" formControlName="nom">
+            <mat-hint>Entrez le nom</mat-hint>
+            <mat-error *ngIf="formControl.get('nom')?.hasError('required')">
+                Nom <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <div class="boutton">
+        <a><button class="bn632-hover bn26" type="submit">Ajouter un type de matériel</button></a>
+    </div>
+</form>

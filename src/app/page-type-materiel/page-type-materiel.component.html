@@ -1,0 +1,25 @@
+<header></header>
+
+<h1>Types de matériel</h1>
+
+<div class="boutton">
+    <a><button class="bn632-hover bn26" (click)="ajouterType()">Ajouter un type</button></a>
+</div>
+
+<table class="container">
+    <thead>
+        <tr>
+            <th style="width:5%">#</th>
+            <th style="width:25%;">Nom</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let type of listeTypes">
+            <td>{{type.id}}</td>
+            <td>{{type.nom}}</td>
+            <td style="width:10% ;"><button (click)="supprimerType(type.id)" class="bn632-hover bn26"
+                    style="width:200px ;">Supprimer</button><button (click)="modifierType(type.id)"
+                    class="bn632-hover bn26" style="width:200px ;">Modifier</button></td>
+        </tr>
+    </tbody>
+</table>

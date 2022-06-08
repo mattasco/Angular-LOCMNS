@@ -1,0 +1,58 @@
+<header></header>
+
+<form [formGroup]="formControl" style="margin-top: 3%;" (submit)="onValid()">
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Nom" formControlName="nom" >
+            <mat-hint>Entrez le nom</mat-hint>
+            <mat-error *ngIf="formControl.get('nom')?.hasError('required')">
+                Nom <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Caution</mat-label>
+            <input matInput placeholder="Caution" formControlName="caution" type="number">
+            <mat-hint>Entrez la caution</mat-hint>
+            <mat-error *ngIf="formControl.get('caution')?.hasError('required')">
+                Caution <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Documentation</mat-label>
+            <input matInput placeholder="Documentation" formControlName="documentation">
+            <mat-hint>Entrez la documentation</mat-hint>
+            <mat-error *ngIf="formControl.get('email')?.hasError('required')">
+                Documentation <strong>non valide</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Marque</mat-label>
+        <mat-select formControlName="marque">
+            <mat-option *ngFor="let marque of listeMarques" [value]="marque.nom">
+                {{marque.nom}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type">
+            <mat-option *ngFor="let type of listeTypes" [value]="type.nom">
+                {{type.nom}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="boutton">
+        <a><button class="bn632-hover bn26" type="submit">Ajouter le modele</button></a>
+    </div>
+</form>

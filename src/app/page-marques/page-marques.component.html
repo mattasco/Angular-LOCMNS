@@ -1,0 +1,35 @@
+<header></header>
+
+<h1>Marques</h1>
+
+<div class="boutton">
+    <a><button class="bn632-hover bn26" (click)="ajouterMarque()">Ajouter une marque</button></a>
+</div>
+
+<div class="recherche">
+<mat-form-field class="rechercheUser" appearance="fill">
+    <mat-label>Recherche par nom</mat-label>
+    <input matInput type="text" [(ngModel)]="value" (keyup)="onKey()">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+</div>
+
+<table class="container">
+    <thead>
+        <tr>
+            <th style="width:5%;">#</th>
+            <th style="width:15%;">Nom</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let marque of listeMarques">
+            <td>{{marque.id}}</td>
+            <td>{{marque.nom}}</td>
+            <td style="width:10% ;"><button (click)="supprimerMarque(marque.id)" class="bn632-hover bn26"
+                    style="width:200px ;">Supprimer</button><button (click)="modifierMarque(marque.id)"
+                    class="bn632-hover bn26" style="width:200px ;">Modifier</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-page-ajouter-utilisateur',
@@ -38,7 +39,7 @@ export class PageAjouterUtilisateurComponent implements OnInit {
     if (this.formControl.valid) {
       const utilisateur = this.formControl.value
       utilisateur.admin=this.isChecked
-      this.client.post("http://localhost:8080/admin/utilisateur", utilisateur).subscribe(utilisateur => {
+      this.client.post("http://"+environment.adresseServeur+"/admin/utilisateur", utilisateur).subscribe(utilisateur => {
         if (utilisateur) {
           this.route.navigateByUrl("/admin-utilisateurs")
         } else {

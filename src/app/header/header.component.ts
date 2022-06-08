@@ -42,4 +42,8 @@ export class HeaderComponent implements OnInit {
     adminUtilisateurs(){
       this.router.navigateByUrl("admin-utilisateurs")
     }
+
+    adminParc(){
+      this.router.navigateByUrl("gestion-parc")
+    }
 }

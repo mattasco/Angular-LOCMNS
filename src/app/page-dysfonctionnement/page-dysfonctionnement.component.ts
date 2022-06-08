@@ -35,7 +35,7 @@ export class PageDysfonctionnementComponent implements OnInit {
     if (this.formControl.valid) {
       const empruntId = this.idEmprunt
       const emprunt = this.formControl.value
-      this.client.post("http://localhost:8080/dysfonctionnement/" + empruntId, emprunt).subscribe(emprunt => {
+      this.client.post("http://"+environment.adresseServeur+"/dysfonctionnement/" + empruntId, emprunt).subscribe(emprunt => {
         if (emprunt) {
           this.router.navigateByUrl("/confirmation")
         } else {

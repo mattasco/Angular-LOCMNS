@@ -30,6 +30,16 @@ import { PageAjouterUtilisateurComponent } from './page-ajouter-utilisateur/page
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PageModifierUtilisateurComponent } from './page-modifier-utilisateur/page-modifier-utilisateur.component';
+import { PageParcComponent } from './page-parc/page-parc.component';
+import { PageTypeMaterielComponent } from './page-type-materiel/page-type-materiel.component';
+import { PageAjouterTypeComponent } from './page-ajouter-type/page-ajouter-type.component';
+import { PageModifierTypeComponent } from './page-modifier-type/page-modifier-type.component';
+import { PageMarquesComponent } from './page-marques/page-marques.component';
+import { PageAjouterMarqueComponent } from './page-ajouter-marque/page-ajouter-marque.component';
+import { PageModifierMarqueComponent } from './page-modifier-marque/page-modifier-marque.component';
+import { PageParcModeleComponent } from './page-parc-modele/page-parc-modele.component';
+import { PageModifierModeleComponent } from './page-modifier-modele/page-modifier-modele.component';
+import { PageAjouterModeleComponent } from './page-ajouter-modele/page-ajouter-modele.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +56,17 @@ import { PageModifierUtilisateurComponent } from './page-modifier-utilisateur/pa
     PageDysfonctionnementComponent,
     PageUtilisateursComponent,
     PageAjouterUtilisateurComponent,
-    PageModifierUtilisateurComponent
+    PageModifierUtilisateurComponent,
+    PageParcComponent,
+    PageTypeMaterielComponent,
+    PageAjouterTypeComponent,
+    PageModifierTypeComponent,
+    PageMarquesComponent,
+    PageAjouterMarqueComponent,
+    PageModifierMarqueComponent,
+    PageParcModeleComponent,
+    PageModifierModeleComponent,
+    PageAjouterModeleComponent
   ],
   imports: [
     BrowserModule,

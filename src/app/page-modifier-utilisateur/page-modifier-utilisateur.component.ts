@@ -37,14 +37,12 @@ export class PageModifierUtilisateurComponent implements OnInit {
         .subscribe(reponse => this.utilisateur = reponse)
       }
     )
-    console.log(this.utilisateur)
   }
 
   onValid(){
     if (this.formControl.valid) {
       const utilisateur = this.formControl.value
-      console.log(utilisateur)
-      this.client.post("http://localhost:8080/admin/modifierutilisateur/"+this.id, utilisateur).subscribe(utilisateur => {
+      this.client.post("http://" + environment.adresseServeur + "/admin/modifierutilisateur/"+this.id, utilisateur).subscribe(utilisateur => {
         if (utilisateur) {
           this.route.navigateByUrl("/admin-utilisateurs")
         } else {
@@ -52,8 +50,6 @@ export class PageModifierUtilisateurComponent implements OnInit {
           this.route.navigateByUrl("/admin-utilisateurs")
         }
       })
-    }else{
-      console.log("erreur")
     }
   }
 
