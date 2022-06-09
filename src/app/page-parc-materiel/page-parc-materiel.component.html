@@ -1,0 +1,41 @@
+<header></header>
+
+<h1>Materiel</h1>
+
+<div class="boutton">
+    <a><button class="bn632-hover bn26" (click)="ajoutermateriel()">Ajouter un materiel</button></a>
+</div>
+
+<div class="recherche">
+<mat-form-field class="rechercheUser" appearance="fill">
+    <mat-label>Recherche par numéro de série, modèle, marque ou type</mat-label>
+    <input matInput type="text" [(ngModel)]="value" (keyup)="onKey()">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+</div>
+
+<table class="container">
+    <thead>
+        <tr>
+            <th style="width:5%">#</th>
+            <th style="width:15%;">Numéro série</th>
+            <th style="width:15%;">Modele</th>
+            <th style="width:15%;">Marque</th>
+            <th style="width:15%;">Type de matériel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let materiel of listeMateriel">
+            <td>{{materiel.id}}</td>
+            <td>{{materiel.numSerie}}</td>
+            <td>{{materiel.modele.nom}}</td>
+            <td>{{materiel.modele.marque.nom}}</td>
+            <td>{{materiel.modele.typeMateriel.nom}}</td>
+            <td style="width:10% ;"><button (click)="supprimermateriel(materiel.id)" class="bn632-hover bn26"
+                    style="width:200px ;">Supprimer</button><button (click)="modifiermateriel(materiel.id)"
+                    class="bn632-hover bn26" style="width:200px ;">Modifier</button></td>
+        </tr>
+    </tbody>
+</table>

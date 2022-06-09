@@ -40,6 +40,11 @@ import { PageModifierMarqueComponent } from './page-modifier-marque/page-modifie
 import { PageParcModeleComponent } from './page-parc-modele/page-parc-modele.component';
 import { PageModifierModeleComponent } from './page-modifier-modele/page-modifier-modele.component';
 import { PageAjouterModeleComponent } from './page-ajouter-modele/page-ajouter-modele.component';
+import { PageParcMaterielComponent } from './page-parc-materiel/page-parc-materiel.component';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { DialogValideComponent } from './dialog-valide/dialog-valide.component';
+import { PageAjouterMaterielComponent } from './page-ajouter-materiel/page-ajouter-materiel.component';
+import { PageModifierMaterielComponent } from './page-modifier-materiel/page-modifier-materiel.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +71,11 @@ import { PageAjouterModeleComponent } from './page-ajouter-modele/page-ajouter-m
     PageModifierMarqueComponent,
     PageParcModeleComponent,
     PageModifierModeleComponent,
-    PageAjouterModeleComponent
+    PageAjouterModeleComponent,
+    PageParcMaterielComponent,
+    DialogValideComponent,
+    PageAjouterMaterielComponent,
+    PageModifierMaterielComponent
   ],
   imports: [
     BrowserModule,
@@ -86,9 +95,14 @@ import { PageAjouterModeleComponent } from './page-ajouter-modele/page-ajouter-m
     MatTableModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatCheckboxModule
-  ],
-  providers: [DatePipe,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
+    MatCheckboxModule,
+    MatDialogModule,
+    
+    ],
+  providers: [{
+    provide: MatDialogRef,
+    useValue: {}
+  },DatePipe,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

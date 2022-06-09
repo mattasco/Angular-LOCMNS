@@ -25,4 +25,8 @@ export class PageParcComponent implements OnInit {
     this.router.navigateByUrl("gestion-modele")
   }
 
+  onMateriel(){
+    this.router.navigateByUrl("gestion-materiel")
+  }
+
 }

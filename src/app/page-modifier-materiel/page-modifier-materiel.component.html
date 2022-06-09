@@ -1,0 +1,35 @@
+<header></header>
+
+<form [formGroup]="formControl" style="margin-top: 3%;" (submit)="onValid()">
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Numéro de série</mat-label>
+            <input matInput placeholder="Nom" formControlName="numSerie" type="number">
+            <mat-hint>Entrez le numéro de série</mat-hint>
+            <mat-error *ngIf="formControl.get('numSerie')?.hasError('required')">
+                Numéro de série <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </p>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Modele</mat-label>
+        <mat-select formControlName="type">
+            <mat-optgroup *ngFor="let type of listeTypes" [label]="type.nom">
+                <mat-option *ngFor="let modele of type.listeModeles" [value]="modele.nom">
+                    {{modele.nom}}
+                </mat-option>
+            </mat-optgroup>
+        </mat-select>
+        <mat-error *ngIf="formControl.get('type')?.hasError('required')">
+            Modele <strong>obligatoire</strong>
+        </mat-error>
+    </mat-form-field>
+    
+
+
+
+    <div class="boutton">
+        <a><button class="bn632-hover bn26" type="submit">Ajouter le materiel</button></a>
+    </div>
+</form>
