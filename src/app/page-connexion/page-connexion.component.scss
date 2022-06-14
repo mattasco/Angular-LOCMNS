@@ -8,13 +8,14 @@ p{
 form {
     margin-top: 10%;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 
 
 mat-form-field{
     text-align: center;
-
 }
 
 button {
@@ -22,7 +23,6 @@ button {
     text-align: center;
     justify-content: center;
     width: 400px;
-
 }
 
 .locmns {

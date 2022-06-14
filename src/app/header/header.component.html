@@ -1,4 +1,35 @@
-<div class="menu">
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <button mat-button routerLink="/accueil">Accueil</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button mat-button (click)="mesReserv()">Mes réservations</button>
+                </li>
+                <li class="nav-item">
+                    <button mat-button (click)="onDeconnexion()">Déconnexion</button>
+                </li>
+                <li class="nav-item dropdown">
+                    <button mat-button [matMenuTriggerFor]="menu" *ngIf="admin">Admin <mat-icon>expand_more</mat-icon></button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="adminReservations()">Réservations</button>
+                        <button mat-menu-item (click)="adminUtilisateurs()">Gestion des utilisateurs</button>
+                        <button mat-menu-item (click)="adminParc()">Gestion du parc</button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<!-- <div class="container-fluid">
     <button mat-button routerLink="/accueil">Accueil</button>
     <button mat-button (click)="mesReserv()">Mes réservations</button>
     <button mat-button (click)="onDeconnexion()">Déconnexion</button>
@@ -8,4 +39,4 @@
         <button mat-menu-item (click)="adminUtilisateurs()">Gestion des utilisateurs</button>
         <button mat-menu-item (click)="adminParc()">Gestion du parc</button>
     </mat-menu>
-</div>
+</div> -->

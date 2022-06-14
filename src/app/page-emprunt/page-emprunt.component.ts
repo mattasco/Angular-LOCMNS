@@ -46,6 +46,7 @@ export class PageEmpruntComponent implements OnInit {
     if (this.formControl.valid) {
       const modeleId = this.idModele
       const emprunt = this.formControl.value
+      console.log(emprunt)
       this.client.post("http://"+environment.adresseServeur+"/emprunt/"+modeleId, emprunt).subscribe(emprunt => {
         if(emprunt) {
           this.route.navigateByUrl("/confirmation")

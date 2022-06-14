@@ -3,7 +3,7 @@
 <h1>Marques</h1>
 
 <div class="boutton">
-    <a><button class="bn632-hover bn26" (click)="ajouterMarque()">Ajouter une marque</button></a>
+    <a><button class="btn btn-primary" (click)="ajouterMarque()">Ajouter une marque</button></a>
 </div>
 
 <div class="recherche">
@@ -16,7 +16,8 @@
 </mat-form-field>
 </div>
 
-<table class="container">
+<div class="table">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th style="width:5%;">#</th>
@@ -27,9 +28,10 @@
         <tr *ngFor="let marque of listeMarques">
             <td>{{marque.id}}</td>
             <td>{{marque.nom}}</td>
-            <td style="width:10% ;"><button (click)="supprimerMarque(marque.id)" class="bn632-hover bn26"
-                    style="width:200px ;">Supprimer</button><button (click)="modifierMarque(marque.id)"
-                    class="bn632-hover bn26" style="width:200px ;">Modifier</button></td>
+            <td style="width:10% ;">
+                <button (click)="supprimerMarque(marque.id)" class="btn btn-primary">Supprimer</button>
+                <button (click)="modifierMarque(marque.id)"class="btn btn-primary">Modifier</button></td>
         </tr>
     </tbody>
 </table>
+</div>

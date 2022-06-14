@@ -2,16 +2,13 @@
 
 <h1>Choisissez le matériel à emprunter</h1>
 <div class="container">
-    <div class="row">
-        <div class="carte col-2 mt-2" *ngFor="let modele of listeModeles">
+        <div *ngFor="let modele of listeModeles">
             <mat-card  class="example-card">
                     <mat-card-title>{{modele.nom}}</mat-card-title>
                     <mat-card-subtitle>Caution : {{modele.caution}}€</mat-card-subtitle>
-
                 <mat-card-actions>
-                    <button  mat-raised-button color="warn" (click)="onChoice(modele.id)"><mat-icon>start</mat-icon></button>
+                    <button  mat-raised-button class="btn btn-primary" (click)="onChoice(modele.id)"><mat-icon>start</mat-icon></button>
                 </mat-card-actions>
             </mat-card>
         </div>
-    </div>
 </div>

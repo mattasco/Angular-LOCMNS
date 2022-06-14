@@ -19,11 +19,10 @@
         <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
       <br><br><br>
-      <div class="mb-3" style="margin-top:2%;">
-        <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 18px; ">Décrivez le cadre d'utilisation : </label><br><br>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="utilisation"></textarea>
+      
+        <label style="font-size: 18px; ">Décrivez le cadre d'utilisation : </label><br><br>
+        <textarea rows="3" formControlName="utilisation"></textarea>
         
-      </div>
       <mat-error *ngIf="formControl.get('utilisation')?.hasError('required')">
         Description <strong>obligatoire</strong>
     </mat-error>

@@ -1,8 +1,7 @@
 <header></header>
 
 <h1>Réservations en attente de validation :</h1>
-
-<table class="container">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th style="width:5%">#</th>
@@ -20,8 +19,8 @@
             <td>{{emprunt.dateFinPret}}</td>
             <td>{{emprunt.materiel.modele.nom}}</td>
             <td>#{{emprunt.emprunteur.id}} {{emprunt.emprunteur.nom}} {{emprunt.emprunteur.prenom}}</td>
-            <td><button mat-icon-button color="primary" (click)="valideEmprunt(emprunt.id)" ><mat-icon>done</mat-icon></button> <button
-                    (click)="supprimeEmprunt(emprunt.id)" mat-icon-button color="warn"><mat-icon>close</mat-icon></button></td>
+            <td><button mat-icon-button color="primary" (click)="valideEmprunt(emprunt.id)" class="btn btn-success"><mat-icon>done</mat-icon></button> <button
+                    (click)="supprimeEmprunt(emprunt.id)" mat-icon-button color="warn" class="btn btn-dark"><mat-icon>close</mat-icon></button></td>
         </tr>
     </tbody>
 </table>
@@ -30,7 +29,7 @@
 <h1>Réservations en cours :</h1>
 
 
-<table class="container">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th style="width:5%">#</th>
@@ -48,7 +47,7 @@
             <td>{{emprunt.dateFinPret}}</td>
             <td>{{emprunt.materiel.modele.nom}}</td>
             <td>#{{emprunt.emprunteur.id}} {{emprunt.emprunteur.nom}} {{emprunt.emprunteur.prenom}}</td>
-            <td><button mat-icon-button color="basic" (click)="retourEmprunt(emprunt.id)" ><mat-icon>done</mat-icon></button></td>
+            <td><button mat-icon-button color="basic" (click)="retourEmprunt(emprunt.id)" class="btn btn-primary"><mat-icon>done</mat-icon></button></td>
         </tr>
     </tbody>
 </table>

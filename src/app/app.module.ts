@@ -45,6 +45,7 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { DialogValideComponent } from './dialog-valide/dialog-valide.component';
 import { PageAjouterMaterielComponent } from './page-ajouter-materiel/page-ajouter-materiel.component';
 import { PageModifierMaterielComponent } from './page-modifier-materiel/page-modifier-materiel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { PageModifierMaterielComponent } from './page-modifier-materiel/page-mod
     MatSelectModule,
     MatCheckboxModule,
     MatDialogModule,
+    NgbModule,
     
     ],
   providers: [{
